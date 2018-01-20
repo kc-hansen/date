@@ -1,42 +1,41 @@
-module.exports = [
-    {
-        id: 1,
-        location: "Taco Bell",
-        price: "Cheap",
-        result: "No Second Date",
-    },
-    {
-        id:2,
-        location: "Coffee Date",
-        price: "Maybe $10",
-        result: "About 10% chance of Second Date",
-    },
 
-    {
-        id:3,
-        location: "Cafe Rio",
-        price: "Low End",
-        result: "About 20% chance of Second Date",
-    },
-{
-        id:4,
-        location: "Bar for drinks",
-        price: "About $40",
-        result: "About 40% chance of Second Date",
-    },
-    {
-        id:5,
-        location: "Nice Dinner with Drinks",
-        price: "About $80",
-        result: "About 60% chance of Second Date",
-    },
-    
-    {
-        id:6,
-        location: "Fondue and a Bottle of wine",
-        price: "about $120",
-        result: "About 80% chance of Second Date",
-    },
-    
 
-]
+let date = [];
+let id = 6;
+
+module.exports = {
+    create: (req,res ) => {  
+        // info req.body
+        id++
+        let newDate = {
+            id: id,
+            location: req.body.location,
+            //price: req.body.price,
+            //result: req.body.result,
+        }
+        date.push(newDate);
+        console.log(date);
+        res.status(200).send('Date idea added!')
+      },
+      read: (req,res ) => {  
+        res.status(200).send(date);
+      },
+      update: (req,res ) => {  
+        const updateId = req.params.id*1;
+        let index = date.findIndex( (date)=> (date.id === updateId))
+        date[index] ={
+            price: req.body.price,
+            location: req.body.location,
+        }
+        
+
+        res.status(200).send("Date updated");
+      },
+      delete: (req,res ) => {  
+        date = date.filter( function (date) {
+            return date.id !== parseInt( req.params.id);
+        })
+        res.status(200).send("Date Deleted");
+      },
+}
+
