@@ -10,8 +10,8 @@ module.exports = {
         let newDate = {
             id: id,
             location: req.body.location,
-            //price: req.body.price,
-            //result: req.body.result,
+            price: req.body.price,
+            result: req.body.result,
         }
         date.push(newDate);
         console.log(date);

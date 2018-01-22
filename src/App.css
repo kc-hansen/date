@@ -20,15 +20,21 @@
 
 .App-intro {
   font-size: 50px;
+  text-align: center;
+  width: 60vw;
+  display: flex;
+  padding-left: 250px;
   
 }
 
 .leftside {
-  height: 100vh;
+  height: 100%;
   width: 35vw;
   display:flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: flex-start;
+ padding-left: 20px;
 
 }
 .background {
@@ -46,6 +52,8 @@
   display:flex;
   flex-direction: column;
   align-items: center;
+  color: white;
+  padding-top: 20px;
 
 }
 
@@ -56,4 +64,27 @@
   font-size: 30px;
   font-style: bold;
   padding-bottom: 10px;
+}
+
+.readbox {
+  height: 220px;
+  width: 170px;
+  display: flex;
+  flex-direction: center;
+  align-items: flex-start;
+ 
+}
+
+.readdisp {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
+  font-size: 20px;
+  color: lightskyblue;
+
+
+
+
 }

@@ -4,6 +4,7 @@ const express = require('express'),
         port = 3033;
 const dates = require("./dates");
 const database = require("./database");
+//const crud = require('./component/crud');
 
 app.use(bodyParser.json());
 
@@ -19,7 +20,7 @@ app.put('/api/dates/:id', dates.update)
 
 app.delete('/api/dates/:id', dates.delete)
 
-console.log(database.dates[0]);
+console.log(database.dates[1]);
 
 app.listen(port, () => 
 console.log(`listening on ${port}`));
